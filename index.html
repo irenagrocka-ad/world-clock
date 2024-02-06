@@ -9,7 +9,51 @@
     <title>World Clock-Irena Grocka</title>
   </head>
   <body>
+    <div id="container">
     <h1>World Clock</h1>
+
+          <form value="/time">
+        <label for="city-timezone"
+          >Which city current time 🕰️ would you like to know?</label
+        >
+        <div>
+          <select id="city-timezone">
+            <option value="">Select city</option>
+            <option value="london">🇬🇧London</option>
+            <option value="new york">🇺🇸 New York</option>
+            <option value="paris">🇫🇷 Paris</option>
+            <option value="sydney">🇦🇺 Sydney</option>
+            <option value="tokyo">🇯🇵Tokyo</option>
+            <option value="warsaw">🇵🇱 Warsaw</option>
+          </select>
+        </div>
+      </form>
+      <div class="city">
+        <h2>🇬🇧London</h2>
+        <div class="date"> 6th of  February 2022</div>
+        <div class="time">12:00</div>
+        </div>
+      </div>
+        <div class="city">
+        <h2>🇵🇱 Warsaw</h2>
+        <div class="date"> 6th of  February 2022</div>
+        <div class="time">12:00</div>
+        </div>
+      </div>
+        <div class="city">
+        <h2>🇺🇸 New York</h2>
+        <div class="date"> 6th of  February 2022</div>
+        <div class="time">12:00</div>
+        </div>
+      </div>
+          </div>
+        <div class="city">
+        <h2>🇦🇺 Sydney</h2>
+        <div class="date"> 6th of  February 2022</div>
+        <div class="time">12:00</div>
+        </div>
+      </div>
+
 
     <footer>
       <p>
@@ -28,6 +72,7 @@
           >hosted on Netlify</a
         >
       </p>
+      </div>
     </footer>
     <script src="src/script.js"></script>
   </body>
