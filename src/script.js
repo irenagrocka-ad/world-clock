@@ -13,16 +13,12 @@ function updateTime() {
         "h:mm:ss[<small>] A[</small >]"
     );
     yourCityDateElement.innerHTML = yourCityTime.format("dddd, MMMM Do YYYY");
-
 }
 
 updateTime();
-//setInterval(updateTime, 1000); // this function is breaking page when selecting city from dropdown 
-
-
+//setInterval(updateTime, 1000); // this function is breaking page when selecting city from dropdown
 
 function showCityTime(event) {
-
     let citiesElement = document.querySelector("#cities");
     let cityTimezone = event.target.value;
 
@@ -38,15 +34,16 @@ function showCityTime(event) {
                 let yourCityTime = moment().tz(cityTimezone);
                 citiesElement.innerHTML = `
                     <div class="city">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/iikoxwld.json"
-                            trigger="hover"
-                            style="width: 70px; height: 70px"
-                        ></lord-icon>
                         <span class="city-name"><strong>${yourCityName}</strong></span>
-                        <div class="date">${yourCityTime.format("dddd, MMMM Do YYYY")}</div>
+                        <div class="date">${yourCityTime.format(
+                    "dddd, MMMM Do YYYY"
+                )}</div>
                     </div>
-                    <div class="time">${yourCityTime.format("h:mm:ss[<small>] A[</small >]")}</div>
+                    <lord-icon src="https://cdn.lordicon.com/iikoxwld.json"
+                    trigger="hover" style="width: 70px; height: 70px"></lord-icon> 
+                    <div class="time">${yourCityTime.format(
+                    "h:mm:ss[<small>] A[</small >]"
+                )}</div>
                 `;
             }, 1000);
         } else {
@@ -55,11 +52,15 @@ function showCityTime(event) {
                 let cityTime = moment().tz(cityTimezone);
                 citiesElement.innerHTML = `
                     <div class="city">
-                        <img id="city-image" src="src/images/${cityName}.jpg" alt="City image" />
                         <span class="city-name"><strong>${cityName}</strong></span>
-                        <div class="date">${cityTime.format("dddd, MMMM Do YYYY")}</div>
+                        <div class="date">${cityTime.format(
+                    "dddd, MMMM Do YYYY"
+                )}</div>
                     </div>
-                    <div class="time">${cityTime.format("h:mm:ss[<small>] A[</small >]")}</div>
+                    <img id="city-image" src="src/images/${cityName}.jpg" alt="City image"/>
+                    <div class="time">${cityTime.format(
+                    "h:mm:ss[<small>] A[</small >]"
+                )}</div>
                 `;
             }, 1000);
         }
@@ -68,7 +69,6 @@ function showCityTime(event) {
         return;
     }
 }
-
 
 let citySelectElement = document.querySelector("#city-selector");
 citySelectElement.addEventListener("change", showCityTime);
