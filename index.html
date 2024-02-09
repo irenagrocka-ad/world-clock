@@ -1,63 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
-    <link rel="stylesheet" href="src/style.css" />
-    <title>World Clock-Irena Grocka</title>
-  </head>
-  <body>
-    <div class="container">
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.37/moment-timezone-with-data-1970-2030.min.js"></script>
+  <link rel="stylesheet" href="src/style.css" />
+  <title>World Clock-Irena Grocka</title>
+</head>
+
+<body>
+  <div class="container">
     <h1>World Clock</h1>
     <form value="/time">
-        <label for="city-timezone"
-          >Which city current time 🕰️ would you like to know?</label
-        >
-        <div>
-          <select id="city-selector">
-            <option value="">Select city</option>
-            <option value="current">My current location's timezone</option>
-            <option value="Europe/Amsterdam">🇳🇱 Amsterdam</option>
-            <option value="Europe/Athens">🇬🇷 Athens</option>
-            <option value="Europe/Berlin">🇩🇪 Berlin</option>
-            <option value="Europe/London">🇬🇧 London</option>
-            <option value="America/Los_Angeles">🇺🇸 Los Angeles</option>
-            <option value="America/New_York">🇺🇸 New York</option>
-            <option value="Europe/Paris">🇫🇷 Paris</option>
-            <option value="Australia/Sydney">🇦🇺 Sydney</option>
-            <option value="Asia/Tokyo">🇯🇵 Tokyo</option>
-            <option value="Europe/Warsaw">🇵🇱 Warsaw</option>
-          </select>
-        </div>
-      </form>
-      <div id="cities">
-       </div>
-           
- </div>
+      <label for="city-timezone">Which city current time 🕰️ would you like to know?</label>
+      <div>
+        <select id="city-selector">
+          <option value="">Select city</option>
+          <option value="current">My current location's timezone</option>
+          <option value="Europe/Amsterdam">🇳🇱 Amsterdam</option>
+          <option value="Europe/Athens">🇬🇷 Athens</option>
+          <option value="Europe/Berlin">🇩🇪 Berlin</option>
+          <option value="Europe/London">🇬🇧 London</option>
+          <option value="America/Los_Angeles">🇺🇸 Los Angeles</option>
+          <option value="America/New_York">🇺🇸 New York</option>
+          <option value="Europe/Paris">🇫🇷 Paris</option>
+          <option value="Australia/Sydney">🇦🇺 Sydney</option>
+          <option value="Asia/Tokyo">🇯🇵 Tokyo</option>
+          <option value="Europe/Warsaw">🇵🇱 Warsaw</option>
+        </select>
+      </div>
+    </form>
+    <div id="cities">
+      <div class="city" id="your-location">
+        <lord-icon src="https://cdn.lordicon.com/iikoxwld.json" trigger="hover" style="width: 70px; height: 70px">
+        </lord-icon>
+        <span class="city-name"><strong>Your Location</strong></span>
+        <div class="date"></div>
+      </div>
+      <div class="time"></div>
+    </div>
+  </div>
 
-    <footer>
+
+  <footer>
     <marquee direction="left" scrollamount="3" behavior="alternate">
       <p>
         This project was coded by
-        <a href="https://github.com/irenagrocka-ad" target="_blank"
-          >Irena Grocka</a
-        >
+        <a href="https://github.com/irenagrocka-ad" target="_blank">Irena Grocka</a>
         and is
         <a href="https://github.com/irenagrocka-ad/world-clock" target="_blank">
-          on GitHub</a
-        >
+          on GitHub</a>
         and
-        <a
-          href="https://dainty-croquembouche-61783d.netlify.app/"
-          target="_blank"
-          >hosted on Netlify</a
-        >
+        <a href="https://dainty-croquembouche-61783d.netlify.app/" target="_blank">hosted on Netlify</a>
       </p>
       </div>
     </marquee>
-    </footer>
-    <script src="src/script.js"></script>
-  </body>
+  </footer>
+  <script src="src/script.js"></script>
+</body>
+
 </html>
