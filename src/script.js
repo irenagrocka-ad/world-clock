@@ -16,7 +16,7 @@ function updateTime() {
 }
 
 updateTime();
-//setInterval(updateTime, 1000); // this function is breaking page when selecting city from dropdown
+setInterval(updateTime, 1000); // this function is breaking page when selecting city from dropdown
 
 function showCityTime(event) {
     let citiesElement = document.querySelector("#cities");
