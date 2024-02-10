@@ -1,6 +1,7 @@
 /**
  * Function to update the time for the current location and display it on the page
  */
+let intervalId; // Variable to hold the interval ID
 function updateTimeCurrentLocation() {
     // Your current location time updating function
     let yourCityElement = document.querySelector("#your-city");
@@ -19,7 +20,7 @@ function updateTimeCurrentLocation() {
 
 /**
  * Function to update the time for the selected city and display it on the page
- * @param {string} cityTimezone - Timezone of the selected city
+ * - Timezone of the selected city
  */
 function updateTimeSelectedCity(cityTimezone) {
     // Update selected city time by seconds
@@ -38,7 +39,6 @@ function updateTimeSelectedCity(cityTimezone) {
 
 /**
  * Function to handle the change event when a city is selected from the dropdown
- * @param {Event} event - The event object
  */
 function showCityTime(event) {
     let cityTimezone = event.target.value;
