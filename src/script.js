@@ -1,68 +1,57 @@
-let intervalId; // Variable to hold the interval ID
-function updateTime() {
-    // Your
+/**
+ * Function to update the time for the current location and display it on the page
+ */
+function updateTimeCurrentLocation() {
+    // Your current location time updating function
     let yourCityElement = document.querySelector("#your-city");
     let yourCityNameElement = document.querySelector(".city-name");
     let yourCityTimeElement = document.querySelector(".time");
-    let yourCityDateElement = document.querySelector(".date"); // Your Element
+    let yourCityDateElement = document.querySelector(".date");
     cityTimezone = moment.tz.guess();
     let yourCityName = cityTimezone.replace("_", " ").split("/")[1];
     let yourCityTime = moment().tz(cityTimezone);
     yourCityNameElement.innerHTML = yourCityName;
     yourCityTimeElement.innerHTML = yourCityTime.format(
-        "h:mm:ss[<small>] A[</small >]"
+        "h:mm:ss[<small>] A[</small>]"
     );
     yourCityDateElement.innerHTML = yourCityTime.format("dddd, MMMM Do YYYY");
 }
 
-updateTime();
-setInterval(updateTime, 1000); // this function is breaking page when selecting city from dropdown
-
-function showCityTime(event) {
+/**
+ * Function to update the time for the selected city and display it on the page
+ * @param {string} cityTimezone - Timezone of the selected city
+ */
+function updateTimeSelectedCity(cityTimezone) {
+    // Update selected city time by seconds
     let citiesElement = document.querySelector("#cities");
-    let cityTimezone = event.target.value;
+    let cityName = cityTimezone.replace("_", " ").split("/")[1];
+    let cityTime = moment().tz(cityTimezone);
+    citiesElement.innerHTML = `
+        <div class="city">
+            <span class="city-name"><strong>${cityName}</strong></span>
+            <div class="date">${cityTime.format("dddd, MMMM Do YYYY")}</div>
+        </div>
+        <img id="city-image" src="src/images/${cityName}.jpg" alt="City image"/>
+        <div class="time">${cityTime.format("h:mm:ss[<small>] A[</small>]")}</div>
+    `;
+}
 
+/**
+ * Function to handle the change event when a city is selected from the dropdown
+ * @param {Event} event - The event object
+ */
+function showCityTime(event) {
+    let cityTimezone = event.target.value;
     // Clear previous interval if it exists
     clearInterval(intervalId);
-    console.log("After clearing interval:", intervalId);
 
     if (cityTimezone.length > 0) {
         if (cityTimezone === "current") {
-            intervalId = setInterval(() => {
-                cityTimezone = moment.tz.guess();
-                let yourCityName = cityTimezone.replace("_", " ").split("/")[1];
-                let yourCityTime = moment().tz(cityTimezone);
-                citiesElement.innerHTML = `
-                    <div class="city">
-                        <span class="city-name"><strong>${yourCityName}</strong></span>
-                        <div class="date">${yourCityTime.format(
-                    "dddd, MMMM Do YYYY"
-                )}</div>
-                    </div>
-                    <lord-icon src="https://cdn.lordicon.com/iikoxwld.json"
-                    trigger="hover" style="width: 70px; height: 70px"></lord-icon> 
-                    <div class="time">${yourCityTime.format(
-                    "h:mm:ss[<small>] A[</small >]"
-                )}</div>
-                `;
-            }, 1000);
+            updateTimeCurrentLocation(); // Update current location time immediately
+            intervalId = setInterval(updateTimeCurrentLocation, 1000); // Update current location time continuously
         } else {
-            intervalId = setInterval(() => {
-                let cityName = cityTimezone.replace("_", " ").split("/")[1];
-                let cityTime = moment().tz(cityTimezone);
-                citiesElement.innerHTML = `
-                    <div class="city">
-                        <span class="city-name"><strong>${cityName}</strong></span>
-                        <div class="date">${cityTime.format(
-                    "dddd, MMMM Do YYYY"
-                )}</div>
-                    </div>
-                    <img id="city-image" src="src/images/${cityName}.jpg" alt="City image"/>
-                    <div class="time">${cityTime.format(
-                    "h:mm:ss[<small>] A[</small >]"
-                )}</div>
-                `;
-            }, 1000);
+            updateTimeSelectedCity(cityTimezone); // Update selected city time immediately
+            intervalId = setInterval(() => updateTimeSelectedCity(cityTimezone), 1000); // Update selected city time continuously
         }
     } else {
         console.error("Select City", cityTimezone);
@@ -73,5 +62,5 @@ function showCityTime(event) {
 let citySelectElement = document.querySelector("#city-selector");
 citySelectElement.addEventListener("change", showCityTime);
 
-// Initial call to showCityTime
-showCityTime({ target: { value: citySelectElement.value } });
+// Initial call to showCityTime with default value
+showCityTime({ target: { value: 'current' } });

@@ -1,3 +1,6 @@
+/* Global Styles */
+
+/* Body styling */
 body {
   font-family: "Roboto", sans-serif;
   background-image: url("images/globe.jpg");
@@ -8,15 +11,28 @@ body {
   background-size: cover;
   color: white;
 }
+
+/* Heading Styles */
 h1 {
+  text-align: left;
+  font-size: 38px;
+}
+
+/* City Question Styles */
+#city-question {
+  font-size: 20px;
   text-align: center;
 }
+
+/* Container Styles */
 .container {
+  /* Overflow settings */
   overflow-x: auto; /* Enable horizontal scrolling when content overflows */
-  overflow-y: scrolls;
+  overflow-y: scroll; /* Enable vertical scrolling when content overflows */
   white-space: nowrap; /* Prevent content from wrapping */
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: transparent transparent; /* For Firefox */
+  /* Flexbox settings */
   display: flex;
   max-width: 700px;
   width: 100%;
@@ -27,7 +43,7 @@ h1 {
   align-items: center;
   text-align: center;
   margin-top: 100px;
-  /* For glowing*/
+  /* Box shadow and backdrop filter for glowing effect */
   -webkit-box-shadow: 0px 0px 101px 11px rgba(224, 220, 177, 0.97);
   -moz-box-shadow: 0px 0px 101px 11px rgba(224, 220, 177, 0.97);
   box-shadow: 0px 0px 101px 11px rgba(224, 220, 177, 0.97);
@@ -37,14 +53,17 @@ h1 {
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 }
+
+/* Select Dropdown Styles */
 select {
   width: 600px;
   padding: 10px;
   border-radius: 10px;
   display: block;
-  font-size: 18px;
   margin-top: 15px;
 }
+
+/* Cities Container Styles */
 #cities {
   margin-top: 10px;
   padding: 10px;
@@ -55,48 +74,77 @@ select {
   display: flex;
   justify-content: space-between;
 }
+
+/* City Icon Styles */
 .city lord-icon {
   width: 20px;
   height: 20px;
-  margin: 20px auto;
+  margin: 10px auto;
 }
+
+/* Image Styles */
 img {
   width: 80px;
   height: 80px;
-  margin: 20px auto;
+  margin: 10px auto;
   border-radius: 50%;
+  /* Box shadow for image hover effect */
   -webkit-box-shadow: 0px 0px 101px 11px rgba(224, 220, 177, 0.97);
   -moz-box-shadow: 0px 0px 101px 11px rgba(224, 220, 177, 0.97);
   box-shadow: 0px 0px 101px 11px rgba(224, 220, 177, 0.97);
 }
+
+/* Image Hover Styles */
+img:hover {
+  transform: scale(1.6);
+  transition: 0.5s;
+}
+
+/* City Styles */
 .city {
   margin-top: 20px;
 }
+
+/* City Name Styles */
 .city-name {
   font-size: 28px;
   margin-bottom: 20px;
 }
+
+/* Date Styles */
 .date {
   font-size: 16px;
   opacity: 0.7;
   margin-top: 10px;
   margin-left: 20px;
 }
+
+/* Time Styles */
 .time {
   font-size: 28px;
   font-weight: bold;
-  line-height: 1;
-  margin-top: 40px;
-  margin-left: 10px;
+  margin: 30px 30px 30px 30px;
 }
+
+/* Time Hover Styles */
+.time:hover {
+  transform: scale(1.6);
+  transition: 0.5s;
+}
+
+/* Small Text Styles */
 .time small {
   font-size: 20px;
   vertical-align: middle;
 }
+
+/* Footer Styles */
 footer {
-  margin-top: 30px;
+  margin-top: 60px;
   text-align: center;
 }
+
+/* Link Styles */
 a {
   color: rgb(216, 222, 35);
   font-weight: bold;

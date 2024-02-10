@@ -14,23 +14,57 @@
 
 <body>
   <div class="container">
-    <h1>World Clock</h1>
+    <h1>World Clock <lord-icon id="clock"
+    src="https://cdn.lordicon.com/lzgqzxrq.json"
+    trigger="loop"
+    state="loop-oscillate"
+    style="width:50px;height:50px">
+</lord-icon></h1>
     <form value="/time">
-      <label for="city-timezone">Which city current time 🕰️ would you like to know?</label>
+      <label for="city-timezone"id="city-question">Which city current time would you like to know?</label>
       <div>
         <select id="city-selector">
           <option value="">Select city</option>
           <option value="current">My current location's timezone</option>
-          <option value="Europe/Amsterdam">🇳🇱 Amsterdam</option>
-          <option value="Europe/Athens">🇬🇷 Athens</option>
-          <option value="Europe/Berlin">🇩🇪 Berlin</option>
-          <option value="Europe/London">🇬🇧 London</option>
-          <option value="America/Los_Angeles">🇺🇸 Los Angeles</option>
-          <option value="America/New_York">🇺🇸 New York</option>
-          <option value="Europe/Paris">🇫🇷 Paris</option>
-          <option value="Australia/Sydney">🇦🇺 Sydney</option>
-          <option value="Asia/Tokyo">🇯🇵 Tokyo</option>
-          <option value="Europe/Warsaw">🇵🇱 Warsaw</option>
+          <option value="Europe/Amsterdam"> 🇳🇱 Amsterdam</option>
+          <option value="Europe/Athens"> 🇬🇷 Athens</option>
+          <option value="Pacific/Auckland"> 🇳🇿 Auckland</option>
+          <option value="Europe/Berlin"> 🇩🇪 Berlin</option>
+           <option value="Europe/Bratislava"> 🇸🇰 Bratislava</option>
+           <option value="Europe/Brussels">  🇧🇪 Brussels</option>
+           <option value="Europe/Bucharest"> 🇷🇴 Bucharest</option>
+           <option value="Europe/Budapest"> 🇭🇺 Budapest</option>
+           <option value="America/Buenos_Aires"> 🇦🇷 Buenos Aires</option>
+           <option value="Africa/Cairo"> 🇪🇬 Cairo</option>
+           <option value="America/Chicago"> 🇺🇸 Chicago</option>
+           <option value="Europe/Copenhagen"> 🇩🇰 Copenhagen</option>
+          <option value="Europe/Dublin">🇮🇪 Dublin</option>
+           <option value="Europe/Helsinki">🇫🇮 Helsinki</option>
+           <option value="Europe/Kiev"> 🇺🇦 Kiev</option>
+           <option value="Asia/Kolkata"> 🇮🇳 Kolkata</option>
+           <option value="Europe/Lisbon"> 🇵🇹 Lisbon</option>
+           <option value="Europe/Ljubljana"> 🇲🇰 Ljubljana</option>
+           <option value="Europe/London"> 🇬🇧 London</option>
+          <option value="America/Los_Angeles"> 🇺🇸 Los Angeles</option>
+          <option value="Europe/Madrid"> 🇪🇸 Madrid</option>
+          <option value="America/Mexico_City"> 🇲🇽 Mexico City</option>
+          <option value="America/New_York"> 🇺🇸 New York</option>
+          <option value="Europe/Oslo"> 🇳🇴 Oslo</option>
+          <option value="Europe/Paris"> 🇫🇷 Paris</option>
+          <option value="Europe/Prague"> 🇨🇿 Prague</option>
+          <option value="Atlantic/Reykjavik"> 🇮🇸 Reykjavik</option>
+          <option value="Europe/Prague"> 🇨🇿 Prague</option>
+           <option value="Europe/Rome"> 🇮🇹 Rome</option>
+            <option value="America/Sao_Paulo"> 🇧🇷 Sao Paulo</option>
+              <option value="Europe/Stockholm"> 🇸🇪 Stockholm</option>
+            <option value="Asia/Seoul"> 🇰🇷 Seoul</option>
+          <option value="Australia/Sydney"> 🇦🇺 Sydney</option>
+          <option value="Asia/Tokyo"> 🇯🇵 Tokyo</option>
+          <option value="America/Toronto"> 🇨🇦 Toronto</option>
+          <option value="America/Vancouver"> 🇨🇦 Vancouver </option>
+          <option value="Europe/Vienna"> 🇦🇹 Vienna</option>
+          <option value="Europe/Warsaw"> 🇵🇱 Warsaw</option>
+          <option value="America/Washington"> 🇺🇸 Washington </option>
         </select>
       </div>
     </form>
